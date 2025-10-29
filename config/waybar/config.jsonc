@@ -1,68 +1,65 @@
 {
-    "layer": "bottom",
-    "position": "bottom",
-    "margin-bottom": 20,
-    
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "battery"],
+	"layer": "top",
+    "width": 1000,
+    "margin-top": 5,
+    "margn-bottom": 0,
+
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["network","pulseaudio", "battery"],
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": [
+                "<span font='13'> </span>", 
+                "<span font='13'> </span>", 
+                "<span font='13'> </span>"
+            ]
+		}
+	},
+
+    "hyprland/workspaces": {
+		"persistent-workspaces": {
+             "*": 5, 
+             "HDMI-A-1": 3 
+       }
+    },
+
+	"network": {
+		"tooltip": false,
+		"format-wifi": "{essid} ({signalStrength}%) <span font='13'>󰖩 </span> ",
+		"format-ethernet": "",
+        "interval": 30
+	},
 
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    },
-
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 10
         },
-        "scroll-step": 1,
-        "on-click": "pavucontrol",
-        "ignored-sinks": ["Easy Effects Sink"]
+        "format": "{icon}  <span>{capacity}%</span>",
+        "format-charging": "<span></span> <span>{capacity}%</span>",
+        "format-plugged": " <span>{capacity}</span>%",
+        "format-alt": "<span>{time}</span> {icon}",
+        "format-icons": [
+            "<span font='13'></span>", 
+            "<span font='13'></span>", 
+            "<span font='13'></span>", 
+            "<span font='13'></span>", 
+            "<span font='13'></span>"
+        ]
     },
-    
-    "network": {
-        "interface": "wlp2s0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "hyprland/workspaces": {
-	    "format": "{name}: {icon}",
-	    "format-icons": {
-		    "1": "",
-		    "2": "",
-		    "3": "",
-		    "4": "",
-		    "5": "",
-		    "active": "",
-		    "default": ""
-	    },
-       "persistent-workspaces": {
-             "*": 5, // 5 workspaces by default on every monitor
-             "HDMI-A-1": 3 // but only three on HDMI-A-1
-        }
+
+	"clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%d/%B/%Y   %I:%M}",
+        "tooltip-format": "{:%Y-%B-%d}"
     }
 }
