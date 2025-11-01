@@ -1,7 +1,7 @@
 * {
     font-family: "JetbrainsMono Nerd Font";
 	font-size: 13px;
-	min-height: 20px;
+	min-height: 25px;
 }
 
 window#waybar {
@@ -55,9 +55,9 @@ window#waybar {
 
 #clock {
     color: #F1F1F1;
-	background: #222330;
-    padding: 0px 5px;
+    background: #020714;
+    padding: 0px 10px;
     margin: 0 10px;
     border-radius: 5px;
-	font-weight: 700;
+    font-weight: 700;
 }
