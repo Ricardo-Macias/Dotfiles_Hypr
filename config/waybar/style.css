@@ -35,7 +35,11 @@ window#waybar {
 #clock,
 #network,
 #pulseaudio,
-#battery {
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature {
     padding: 5px 12px;
     margin: 5px;
     border-radius: 10px;
@@ -62,62 +66,30 @@ window#waybar {
 #clock:hover,
 #network:hover,
 #pulseaudio:hover,
-#battery:hover {
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover  {
     background: rgba(2255, 79, 216, 0.2);
 }
 
-/*
-#workspaces {
-    transition: all 2050ms ease-in-out;
+#cpu {
+    color: #b266ff;
 }
 
-#workspaces button {
-	transition: all 250ms ease-in-out;
-    padding: 0 5px;
-    margin: 0 2px;
-    background: #121212;
-    border: 1px solid #434343;
-	color: #B5E8E6;
+#memory {
+    color: #00eaff
 }
 
-#workspaces button.active {
-	min-width: 50px;
-    background: #e8eaed;
-    color: #121212;
-    border-radius: 100px;
-    border: 0px;
+#temperature {
+    color: #ff9efc;
 }
 
-#network {
-	background: #aad8cf;
-    color: #121212;
-    padding: 0 5px;
-    margin: 0 10px;
-    border-radius: 5px;
+#disk {
+    color: #cba6f7;
 }
 
-#pulseaudio {
-	background: #c3aad8;
-    color: #121212;
-    padding: 0 5px;
-    margin: 0 5px;
-    border-radius: 5px;
+#temperature.critical {
+    color: #ff0000
 }
-
-#battery {
-	background: #b7d8aa;
-    color: #121212;
-    padding: 0 10px;
-    margin: 0 10px;
-    border-radius: 5px;
-}
-
-#clock {
-    color: #F1F1F1;
-    background: #020714;
-    padding: 0px 10px;
-    margin: 0 10px;
-    border-radius: 5px;
-    font-weight: 700;
-}
-*/

@@ -1,11 +1,19 @@
 {
 	"layer": "top",
     "position": "top",
-    "height": 40,
+    "height": 41,
 
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["network","pulseaudio", "battery", "tray"],
+	"modules-right": [
+        "temperature",
+        "cpu",
+        "memory",
+        "disk",
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -59,6 +67,24 @@
         "tooltip": true,
         "format": "{:%d/%B/%Y   %I:%M}",
         "tooltip-format": "{:%Y-%B-%d}"
+    },
+
+    "cpu": {
+        "format": "<span font='13'></span>    {usage}%"
+    },
+
+    "memory": {
+        "format": "<span font='13'></span>    {}%"
+    },
+
+    "temperature": {
+        "format": "<span font='13'></span>  {temperatureC}°C",
+        "critical-threshold": 80
+    },
+
+    "disk": {
+        "format": "<span font='13'></span>   {percentage_used}%",
+        "path": "/"
     },
 
     "tray": {
