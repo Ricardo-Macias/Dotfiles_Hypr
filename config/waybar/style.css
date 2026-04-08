@@ -1,6 +1,6 @@
 * {
     font-family: "JetbrainsMono Nerd Font";
-	font-size: 13px;
+	font-size: 11px;
 	min-height: 25px;
     border: none;
     border-radius: 10px;
@@ -39,7 +39,8 @@ window#waybar {
 #cpu,
 #memory,
 #disk,
-#temperature {
+#temperature,
+#bluetooth {
     padding: 5px 12px;
     margin: 5px;
     border-radius: 10px;
@@ -70,7 +71,8 @@ window#waybar {
 #cpu:hover,
 #memory:hover,
 #disk:hover,
-#temperature:hover  {
+#temperature:hover,
+#bluetooth:hover  {
     background: rgba(2255, 79, 216, 0.2);
 }
 
@@ -92,4 +94,8 @@ window#waybar {
 
 #temperature.critical {
     color: #ff0000
+}
+
+#bluetooth {
+    color: #b266ff;
 }

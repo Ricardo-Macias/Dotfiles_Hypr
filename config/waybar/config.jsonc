@@ -13,19 +13,20 @@
 	"modules-right": [
         "pulseaudio",
         "network",
+        "bluetooth",
         "battery"],
 	
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
 		"format": "{icon} {volume}%",
-		"format-muted": "<span font='13'>󰝟 </span> {volume}%",
+		"format-muted": "<span font='11'>󰝟 </span> {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": [
-                "<span font='13'></span>", 
-                "<span font='13'></span>", 
-                "<span font='13'></span>"
+                "<span font='11'></span>", 
+                "<span font='11'></span>", 
+                "<span font='11'></span>"
             ]
 		}
 	},
@@ -35,11 +36,18 @@
         "on-click": "activate"
     },
 
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-no-controller": "󰂲"
+    },
+
 	"network": {
 		"tooltip": false,
-		"format-wifi": "{essid} ({signalStrength}%) <span font='13'>󰖩 </span> ",
-		"format-ethernet": "{essid} <span font='13'>󰖩 </span>",
-        "format-disconnected": "Disconnected <span font='13'>󰖪 </span>",
+		"format-wifi": "{essid} ({signalStrength}%) <span font='11'>󰖩 </span> ",
+		"format-ethernet": "{essid} <span font='11'>󰖩 </span>",
+        "format-disconnected": "Disconnected <span font='11'>󰖪 </span>",
         "interval": 30
 	},
 
@@ -54,11 +62,11 @@
         "format-plugged": " <span>{capacity}</span>%",
         "format-alt": "<span>{time}</span> {icon}",
         "format-icons": [
-            "<span font='13'></span>", 
-            "<span font='13'></span>", 
-            "<span font='13'></span>", 
-            "<span font='13'></span>", 
-            "<span font='13'></span>"
+            "<span font='11'></span>", 
+            "<span font='11'></span>", 
+            "<span font='11'></span>", 
+            "<span font='11'></span>", 
+            "<span font='11'></span>"
         ]
     },
 
@@ -69,20 +77,20 @@
     },
 
     "cpu": {
-        "format": "<span font='13'></span>  {usage}%"
+        "format": "<span font='11'></span>  {usage}%"
     },
 
     "memory": {
-        "format": "<span font='13'></span>  {}%"
+        "format": "<span font='11'></span>  {}%"
     },
 
     "temperature": {
-        "format": "<span font='13'></span> {temperatureC}°C",
+        "format": "<span font='11'></span> {temperatureC}°C",
         "critical-threshold": 80
     },
 
     "disk": {
-        "format": "<span font='13'></span> {percentage_used}%",
+        "format": "<span font='11'></span> {percentage_used}%",
         "path": "/"
     }
 }
