@@ -1,17 +1,18 @@
 {
 	"layer": "top",
     "position": "top",
-    "height": 45,
+    "height": 40,
 
-	"modules-left": ["hyprland/workspaces"],
-	"modules-center": ["clock"],
-	"modules-right": [
-        //"temperature",
+	"modules-left": [
+        "temperature",
         "cpu",
         "memory",
-        "disk",
-        "network",
+        "disk"
+    ],
+	"modules-center": ["clock", "hyprland/workspaces"],
+	"modules-right": [
         "pulseaudio",
+        "network",
         "battery"],
 	
 	"pulseaudio": {
@@ -64,8 +65,7 @@
 	"clock": {
         "interval": 60,
         "tooltip": true,
-        "format": "{:%d/%B/%Y   %I:%M}",
-        "tooltip-format": "{:%Y-%B-%d}"
+        "format": "{:%I:%M}"
     },
 
     "cpu": {
@@ -76,10 +76,10 @@
         "format": "<span font='13'></span>  {}%"
     },
 
-    /*"temperature": {
+    "temperature": {
         "format": "<span font='13'></span> {temperatureC}°C",
         "critical-threshold": 80
-    },*/
+    },
 
     "disk": {
         "format": "<span font='13'></span> {percentage_used}%",
