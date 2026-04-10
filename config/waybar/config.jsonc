@@ -11,6 +11,7 @@
     ],
 	"modules-center": ["clock", "hyprland/workspaces"],
 	"modules-right": [
+        "backlight",
         "pulseaudio",
         "network",
         "bluetooth",
@@ -92,5 +93,11 @@
     "disk": {
         "format": "<span font='11'></span> {percentage_used}%",
         "path": "/"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<span font='11'>{icon}</span>  {percent}%",
+        "format-icons": ["", "󰖨"]
     }
 }
